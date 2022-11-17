@@ -8,10 +8,10 @@ import './App.css';
 
 
 const App = () => (
-  <div style={{ backgroundColor: "red" }}>
-    <Navbar bg="dark"  variant="dark">
+  <div style={{ backgroundColor: "#2EC4B6" }}>
+    <Navbar className="navbar1">
         <Container>
-        <Navbar.Brand className="sample" href="#home" >
+        <Navbar.Brand className="sample" href="#home">
             <img
               alt="logo"
               src={logo}
@@ -19,7 +19,7 @@ const App = () => (
               height="40"
               className="d-inline-block align-top"
             />{' '}
-            finAIDS
+            <p>finAIDS</p>    
           </Navbar.Brand>
         </Container>
       </Navbar>
@@ -31,6 +31,7 @@ const App = () => (
       <button class="btn btn-primary btn-lg" type="button">Example button</button>
     </div>
     </div>
+    <p>Lorem Ipsum</p>
 </div>
 </div>
 );

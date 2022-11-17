@@ -8,10 +8,10 @@ import './App.css';
 
 
 const App = () => (
-<div>
-<Navbar bg="dark" variant="dark">
+  <div style={{ backgroundColor: "red" }}>
+    <Navbar bg="dark"  variant="dark">
         <Container>
-          <Navbar.Brand href="#home">
+        <Navbar.Brand className="sample" href="#home" >
             <img
               alt="logo"
               src={logo}
@@ -23,7 +23,7 @@ const App = () => (
           </Navbar.Brand>
         </Container>
       </Navbar>
-<div class="container py-4">
+    <div class="container py-4" >
     <div class="p-5 mb-4 bg-light rounded-3">
     <div class="container-fluid py-5">
       <h1 class="display-5 fw-bold">finAIDS</h1>

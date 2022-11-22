@@ -5,7 +5,7 @@ export default class SignUp extends Component {
         super(props)
         this.state = {
             fname: "",
-            lname: "",
+            lname: "lastName",
             email: "",
             password: ""
         }
@@ -31,7 +31,20 @@ export default class SignUp extends Component {
 
             }),
 
-        }).then(res => res.json()).then((data)=>console.log(data,"userregistered"))
+        }).then(res => res.json()).then((data) => {
+            console.log(data, "userregistered")
+            if (data.status === "OKAY") {
+                
+                alert("Signup successful")
+                
+            }
+            else if (data.error === "User already exists") {
+                alert("User already exists, Please try again with a different email id!")
+            }
+            else if (data.status === "Something went wrong") {
+                alert("Something went wrong, Please try again!")
+            }
+        })
     }
     render() {
         return (
@@ -52,7 +65,7 @@ export default class SignUp extends Component {
                     <label>Last name</label>
                     <input type="text"
                         className="form-control"
-                        placeholder="Last name"
+                        placeholder={this.state.lname}
                         onChange={e => this.setState({ lname: e.target.value })}
                     />
                 </div>

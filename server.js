@@ -69,13 +69,13 @@ app.post("/login-user", async (req, res) => {
 
         }
         if (await bcrypt.compare(password, user.password)) {
-            const token = jwt.sign({email:user.email}, JWT_SECRET_KEY)
+            const token = jwt.sign({ email: user.email }, JWT_SECRET_KEY)
             if (res.status(201)) {
                 return res.json({ status: "ok", data: token })
             }
         }
         return res.json({ status: "error", error: "Invalid password" })
-        
+
     } catch (error) {
         res.send({ status: "Something went wrong" })
     }
@@ -111,4 +111,3 @@ app.listen(5000, () => {
 //pass:bestproject
 
 
-// 04445614700 
